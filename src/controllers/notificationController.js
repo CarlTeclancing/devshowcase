@@ -1,6 +1,6 @@
 const sendResponse = require('../utils/sendResponse');
 const ApiError = require('../utils/ApiError');
-const notificationService = require('../services/notificationService');
+const notificationService = require('../services/NotificationService');
 
 /**
  * Get user's notifications

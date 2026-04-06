@@ -1,6 +1,6 @@
 const sendResponse = require('../utils/sendResponse');
 const ApiError = require('../utils/ApiError');
-const aiService = require('../services/AiService');
+const aiService = require('../services/aiservice');
 
 const getCollaboratorSuggestions = async (req, res, next) => {
   try {
