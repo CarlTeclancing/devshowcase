@@ -47,7 +47,7 @@ model User {
   activities              ActivityLog[]
   forks                   Fork[]
   tutorials               Tutorial[]
-  pitches                 Pitch[]
+  
   ownershipVerifications  OwnershipVerification[]
 
   @@map("users")
@@ -95,7 +95,6 @@ model Project {
   tutorial       Tutorial?
   originalForks  Fork[]         @relation("OriginalProject")
   forkedFrom     Fork?          @relation("ForkedProject")
-  pitch          Pitch?
   ownershipVerification OwnershipVerification?
   projectLicense       ProjectLicense?
 
@@ -376,25 +375,6 @@ model Fork {
 }
 
 
-// PITCH MODE MODELS
-
-
-model Pitch {
-  id              Int       @id @default(autoincrement())
-  project_id      Int       @unique
-  owner_id        Int
-  market_analysis Json?
-  roadmap         Json?
-  revenue_model   Json?
-  visibility      String    @default("public") @db.VarChar(20)
-  created_at      DateTime  @default(now())
-  updated_at      DateTime  @updatedAt
-
-  project Project @relation(fields: [project_id], references: [id], onDelete: Cascade)
-  owner   User    @relation(fields: [owner_id], references: [id], onDelete: Cascade)
-
-  @@map("pitches")
-}
 
 
 // LICENSING & OWNERSHIP MODELS

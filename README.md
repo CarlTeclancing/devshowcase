@@ -11,17 +11,42 @@
 - **Authentication:** JWT
 - **Real-time:** Socket.io
 
-## Features Implemented
+## modules and features
 
-- User authentication (register, login, JWT)
-- Profile management with avatar upload
-- Project CRUD with thumbnail and gallery upload
-- Project assets upload (code, docs, videos)
-- Build timeline with stages, milestones, and time tracking
-- Milestone media upload
-- Collaboration system (invites, join requests, role management)
-- Admin dashboard with user/project management
-- Platform analytics
+
+Auth - Register, login, logout, JWT token, email verification, password reset, refresh token
+
+Users - Profile management, avatar upload/delete, role switching, public profiles, user projects
+
+Projects - CRUD operations, technology tags, industry tags, visibility controls, thumbnail upload, gallery upload, asset management
+
+Timeline - Stages (idea/planning/development/testing/deployment), milestones, time logging, milestone media upload
+
+Collaboration - Invite collaborators, join requests, role management, remove collaborators
+
+Admin - List users, suspend users, change user roles, list projects, feature projects, delete projects, platform analytics
+
+Search & Discovery - Search by technology/industry/problem, filter options, trending projects, personalized recommendations, categories, trending tags
+
+Marketplace - Set pricing, browse listings, purchase projects/templates, purchase history, sales analytics
+
+Notifications - Real-time WebSocket notifications, mark as read, delete notifications, notification preferences
+
+Funding & Investment - Create funding requests, make investments, sponsor projects, backers list, investment portfolio, funding opportunities
+
+Reputation & Endorsements - Endorse users for skills, reputation score, endorsement list, build verification, activity history
+
+Analytics Dashboard - View analytics, demo interactions, engagement metrics, timeline insights, CSV/PDF export
+
+Learning Mode - Convert projects to tutorials, build replay, fork projects, list forked projects
+
+Pitch Mode - Create pitch presentation, market analysis, roadmap, revenue model, PDF export, toggle visibility
+
+AI Features - Collaborator recommendations, investor suggestions, project recommendations, improvement suggestions, generate summary, generate pitch draft, generate description, skill match
+
+Licensing & Ownership - License templates (MIT/GPL/Apache/Commercial), apply license, ownership verification, blockchain proof, download license
+
+
 
 
 ## postgresql database

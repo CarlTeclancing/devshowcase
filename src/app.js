@@ -3,6 +3,12 @@ const cors    = require('cors');
 const morgan  = require('morgan');
 const path    = require('path');
 
+
+
+
+
+
+
 const { apiLimiter }             = require('./middleware/rateLimiter');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
@@ -19,9 +25,11 @@ const fundingRoutes = require('./routes/fundingRoute');
 const reputationRoutes = require('./routes/reputationRoute');
 const analyticsRoutes = require('./routes/analyticsRoute');
 const learningRoutes = require('./routes/learningRoute');
-const pitchRoutes = require('./routes/pitchRoute');
 const aiRoutes = require('./routes/aiRoute');
 const licensingRoutes = require('./routes/licensingRoute');
+
+
+const swaggerRoutes = require('./routes/swaggerRoute');
 
 
 const app = express();
@@ -64,9 +72,13 @@ app.use('/api', fundingRoutes);
 app.use('/api', reputationRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/learning', learningRoutes);
-app.use('/api/pitch', pitchRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/licensing', licensingRoutes);
+
+
+app.use('/api-docs', swaggerRoutes);
+
+
 
 app.use(notFound);
 app.use(errorHandler);
