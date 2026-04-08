@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const http = require('http');
-const { Server } = require('socket.io');
+//const { Server } = require('socket.io');
 const app = require('./src/App');
 const { connectDB } = require('./src/config/prisma');
 const notificationService = require('./src/services/NotificationService');
@@ -10,13 +10,12 @@ const PORT = process.env.PORT || 5000;
 const server = http.createServer(app);
 
 // WebSocket setup for real-time notifications
-const io = new Server(server, {
+/*const io = new Server(server, {
   cors: {
     origin: process.env.CLIENT_URL || 'http://localhost:3000',
     credentials: true,
   },
 });
-
 // Store connected users
 const connectedUsers = new Map();
 
@@ -52,7 +51,7 @@ const sendNotification = (userId, notification) => {
 // Make io available to services
 app.set('io', io);
 app.set('sendNotification', sendNotification);
-
+*/
 const start = async () => {
   try {
     await connectDB();
@@ -61,7 +60,7 @@ const start = async () => {
       console.log(`  Running  : http://localhost:${PORT}`);
       console.log(`  Mode     : ${process.env.NODE_ENV || 'development'}`);
       console.log(`  Health   : http://localhost:${PORT}/health`);
-      console.log(`  WebSocket: ws://localhost:${PORT}`);
+      //console.log(`  WebSocket: ws://localhost:${PORT}`);
     });
   } catch (err) {
     console.error('Server failed to start:', err.message);
